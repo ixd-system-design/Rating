@@ -1,0 +1,98 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #b9d1df;
+}
+
+html,
+body,
+button,
+input,
+textarea {
+  font-family: quiche-text, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+body>p,
+body>h2,
+body>h3 {
+  text-align: justify;
+  margin: 1rem;
+  max-width: 60rem;
+}
+ 
+
+#water {
+  border: 0;
+  background: #ffffff66;
+  border-radius: 1rem;
+  padding: 1rem;
+  fill: #04669f;
+}
+
+#water legend {
+  background: #fff;
+  color: #003d61;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+
+/* how big should the water drops be? */
+#water svg {
+  width: 3rem;
+}
+
+/* hide the default radio buttons 
+also hide the symbols initially
+(we will override this below.) */
+#water input,
+#water label use {
+  display: none;
+}
+
+/* flexbox / row-reverse lets us leverage the logic of 
+a CSS Subsequent Sibling Combinator (~) for styling.  */
+#water .droplets {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* Set the inactive SVG symbol as the default */
+#water input~label use.inactive {
+  display: block;
+}
+
+/* Change the color of the svg on hover*/
+#water input:hover~label svg {
+  fill: #003d61;
+}
+
+/* When a droplet is checked (or the mouse is hovering)
+
+Show the active SVG symbol for all subsequent Labels. */
+#water input:hover~label use.active,
+#water input:checked~label use.active {
+  display: block;
+}
+
+/* Hide the inactive SVG symbol for all subsequent Labels. */
+#water input:hover~label use.inactive,
+#water input:checked~label use.inactive {
+  display: none;
+}
+
+
+/* Status indicator to show the current value. */
+#status {
+  text-align: center;
+  font-style: italic;
+  margin: 1rem;
+}
