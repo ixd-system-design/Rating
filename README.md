@@ -1,5 +1,4 @@
 # Rating   
-[![Open in Coder](https://ixdcoder.com/open-in-coder.svg)](https://ixdcoder.com/templates/Static/workspace?name=Rating&mode=auto&param.git_repo=https://bender.sheridanc.on.ca/system-design/rating&param.code_template=custom)
   
 # Custom Radio Buttons with SVG and CSS
 This page uses standard [radio buttons](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio) to implement a user interface for rating on a scale of one to five. Thematic water drops riff on the more conventional "star".  
