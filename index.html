@@ -3,13 +3,23 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta
+    name="viewport"
+    content="width=device-width"
+  >
   <title>Rating Scale Input - Custom Radio Buttons with SVG and CSS</title>
 
   <!--Typography via Adobe Fonts -->
-  <link rel="stylesheet" href="https://use.typekit.net/hqg7rfa.css">
-  
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link
+    rel="stylesheet"
+    href="https://use.typekit.net/hqg7rfa.css"
+  >
+
+  <link
+    href="style.css"
+    rel="stylesheet"
+    type="text/css"
+  />
 </head>
 
 <body>
@@ -17,85 +27,192 @@
   <h2>Rating Scale Input</h2>
   <h3>Custom Radio Buttons with SVG and CSS</h3>
 
+  <form>
 
-    <form>
-      
-   <fieldset id="water">
-     <legend>Thirsty?</legend>
-     <div class="droplets">
+    <fieldset id="water">
+      <legend>Thirsty?</legend>
+      <div class="droplets">
 
-       <input type="radio" id="w5" name="water" value="5" />
-       <label for="w5">
+        <input
+          type="radio"
+          id="w5"
+          name="water"
+          value="5"
+        />
+        <label for="w5">
           <svg viewbox="0 0 24 24">
-            <use class="inactive" href="#inactive" />
-            <use class="active" href="#active" />
-          </svg> 
-       </label>
-
-       <input type="radio" id="w4" name="water" value="4" />
-       <label for="w4">
-         <svg viewbox="0 0 24 24">
-           <use class="inactive" href="#inactive" />
-           <use class="active" href="#active" />
-         </svg> 
-       </label> 
-
-       <input type="radio" id="w3" name="water" value="3" />
-       <label for="w3">
-         <svg viewbox="0 0 24 24">
-           <use class="inactive" href="#inactive" />
-           <use class="active" href="#active" />
-         </svg> 
-       </label> 
-
-        <input type="radio" id="w2" name="water" value="2" />
-        <label for="w2">
-          <svg viewbox="0 0 24 24">
-            <use class="inactive" href="#inactive" />
-            <use class="active" href="#active" />
-          </svg> 
-        </label> 
-
-       <input type="radio" id="w1" name="water" value="1" checked />
-        <label for="w1">
-          <svg viewbox="0 0 24 24">
-            <use class="inactive" href="#inactive" />
-            <use class="active" href="#active" />
-          </svg> 
+            <use
+              class="inactive"
+              href="#inactive"
+            />
+            <use
+              class="active"
+              href="#active"
+            />
+          </svg>
         </label>
 
-    </div>
-   </fieldset> 
+        <input
+          type="radio"
+          id="w4"
+          name="water"
+          value="4"
+        />
+        <label for="w4">
+          <svg viewbox="0 0 24 24">
+            <use
+              class="inactive"
+              href="#inactive"
+            />
+            <use
+              class="active"
+              href="#active"
+            />
+          </svg>
+        </label>
+
+        <input
+          type="radio"
+          id="w3"
+          name="water"
+          value="3"
+        />
+        <label for="w3">
+          <svg viewbox="0 0 24 24">
+            <use
+              class="inactive"
+              href="#inactive"
+            />
+            <use
+              class="active"
+              href="#active"
+            />
+          </svg>
+        </label>
+
+        <input
+          type="radio"
+          id="w2"
+          name="water"
+          value="2"
+        />
+        <label for="w2">
+          <svg viewbox="0 0 24 24">
+            <use
+              class="inactive"
+              href="#inactive"
+            />
+            <use
+              class="active"
+              href="#active"
+            />
+          </svg>
+        </label>
+
+        <input
+          type="radio"
+          id="w1"
+          name="water"
+          value="1"
+          checked
+        />
+        <label for="w1">
+          <svg viewbox="0 0 24 24">
+            <use
+              class="inactive"
+              href="#inactive"
+            />
+            <use
+              class="active"
+              href="#active"
+            />
+          </svg>
+        </label>
+
+      </div>
+    </fieldset>
 
     <div id="status">Rating is 1</div>
 
-      </form>
+  </form>
 
 
-  <p>This page uses standard <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio">radio buttons</a> to implement a user interface for rating on a scale of one to five. Thematic water drops riff on the more conventional "star". </p>
-  
-  <p>Vector artwork is defined directly in index.html as <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_In_HTML_Introduction">inline SVG</a> markup. Specifically, we create a set of <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol">SVG symbols</a>, strategically named <b>#active</b> and <b>#inactive</b>. These symbols are re-used several times (in our radio button labels) via the SVG <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use">use</a> tag. Importantly, <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_In_HTML_Introduction">Inline SVGs</a> are adjustable via CSS (e.g. we can change the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes">fill</a> on <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover">:hover</a>).</p>
-  
-  <p>Droplets appear in descending order (5-4-3-2-1) in HTML, but this arrangement is flipped in CSS via <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction">flex-direction: row-reverse</a>. This approach makes it possible to exploit <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Subsequent-sibling_combinator">Subsequent Sibling</a> (<a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Subsequent-sibling_combinator">~</a>) logic in CSS. <i>Note that CSS lacks a "prior sibling" combinator</i>. To show / hide the inactive / active SVG symbols, we use the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:checked">:checked</a> and <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover">:hover</a> psuedo-classes to toggle <b>display: none</b> and <b>display: block</b>.</p>
-  
-  <p> As a caviat, keep in mind that this sort of adaptation involves tradeoffs between visual appearance, brand, usability, and accessibility.</p>
+  <p>This page uses standard <a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio"
+    >radio buttons</a> to implement a user interface for rating on a scale of one to five. Thematic water drops riff on
+    the more conventional "star". </p>
 
-  <p>For comparison (and further inspiration) note that it's also possible to do this without SVGs. For example, <a target="_blank" href="https://codepen.io/jamesbarnett/pen/najzYK">this codepen by James Barnett</a> employs Font Awesome icons and the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before">::before</a> pseudo-element. Remember that there are many ways to solve a problem. What other CSS or JavaScript-based approaches can you find?</p>
+  <p>Vector artwork is defined directly in index.html as <a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_In_HTML_Introduction"
+    >inline SVG</a> markup. Specifically, we create a set of <a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol"
+    >SVG symbols</a>, strategically named <b>#active</b> and <b>#inactive</b>. These symbols are re-used several times
+    (in our radio button labels) via the SVG <a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use"
+    >use</a> tag. Importantly, <a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_In_HTML_Introduction"
+    >Inline SVGs</a> are adjustable via CSS (e.g. we can change the <a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes"
+    >fill</a> on <a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover"
+    >:hover</a>).</p>
 
-  <p>This demo was created by <a target="_blank" href="https://nsitu.ca">Harold Sikkema</a>. </p>
+  <p>Droplets appear in descending order (5-4-3-2-1) in HTML, but this arrangement is flipped in CSS via <a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction"
+    >flex-direction: row-reverse</a>. This approach makes it possible to exploit <a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/Subsequent-sibling_combinator"
+    >Subsequent Sibling</a> (<a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/Subsequent-sibling_combinator"
+    >~</a>) logic in CSS. <i>Note that CSS lacks a "prior sibling" combinator</i>. To show / hide the inactive / active
+    SVG symbols, we use the <a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/:checked"
+    >:checked</a> and <a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover"
+    >:hover</a> psuedo-classes to toggle <b>display: none</b> and <b>display: block</b>.</p>
 
-<!-- Below we define a set of SVG symbols for active and inactive -->
+  <p> As a caviat, keep in mind that this sort of adaptation involves tradeoffs between visual appearance, brand,
+    usability, and accessibility.</p>
+
+  <p>For comparison (and further inspiration) note that it's also possible to do this without SVGs. For example, <a
+      target="_blank"
+      href="https://codepen.io/jamesbarnett/pen/najzYK"
+    >this codepen by James Barnett</a> employs Font Awesome icons and the <a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before"
+    >::before</a> pseudo-element. Remember that there are many ways to solve a problem. What other CSS or
+    JavaScript-based approaches can you find?</p>
+
+  <p>This demo was created by <a
+      target="_blank"
+      href="https://nsitu.ca"
+    >Harold Sikkema</a>. </p>
+
+  <!-- Below we define a set of SVG symbols for active and inactive -->
   <svg>
-    <symbol id="inactive">  
-      <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z"/>
+    <symbol id="inactive">
+      <path
+        d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z"
+      />
     </symbol>
-    <symbol id="active"> 
-      <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z"/>
+    <symbol id="active">
+      <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z" />
     </symbol>
   </svg>
-  
+
   <script src="script.js"></script>
- 
+
 </body>
 
 </html>
