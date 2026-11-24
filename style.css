@@ -35,7 +35,6 @@ body>h3 {
   background: #ffffff66;
   border-radius: 1rem;
   padding: 1rem;
-  fill: #04669f;
 }
 
 #water legend {
@@ -45,17 +44,30 @@ body>h3 {
   border-radius: 1rem;
 }
 
-/* how big should the water drops be? */
-#water svg {
+#water label img {
+  display: block;
   width: 3rem;
+  filter: grayscale(100%);
+  opacity: 0.4;
 }
 
-/* hide the default radio buttons 
-also hide the symbols initially
-(we will override this below.) */
-#water input,
-#water label use {
-  display: none;
+/* Visually hide the radios while keeping them available to keyboards and screen readers. */
+#water input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+#water input:focus-visible + label {
+  outline: 2px solid #003d61;
+  outline-offset: 2px;
+}
+
+#water label {
+  cursor: pointer;
 }
 
 /* flexbox / row-reverse lets us leverage the logic of 
@@ -65,28 +77,24 @@ a CSS Subsequent Sibling Combinator (~) for styling.  */
   flex-direction: row-reverse;
 }
 
-/* Set the inactive SVG symbol as the default */
-#water input~label use.inactive {
-  display: block;
+/* Highlight the selected rating and all lower ratings. */
+#water input:checked ~ label img,
+#water label:hover ~ label img,
+#water label:hover img {
+  filter: none;
+  opacity: 1;
 }
 
-/* Change the color of the svg on hover*/
-#water input:hover~label svg {
-  fill: #003d61;
+/* While hovering, preview the hovered rating instead of the selected rating. */
+#water .droplets:has(label:hover) input:checked ~ label img {
+  filter: grayscale(100%);
+  opacity: 0.4;
 }
 
-/* When a droplet is checked (or the mouse is hovering)
-
-Show the active SVG symbol for all subsequent Labels. */
-#water input:hover~label use.active,
-#water input:checked~label use.active {
-  display: block;
-}
-
-/* Hide the inactive SVG symbol for all subsequent Labels. */
-#water input:hover~label use.inactive,
-#water input:checked~label use.inactive {
-  display: none;
+#water .droplets:has(label:hover) label:hover ~ label img,
+#water .droplets:has(label:hover) input ~ label:hover img {
+  filter: none;
+  opacity: 1;
 }
 
 
